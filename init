@@ -1,0 +1,20 @@
+dirname=$(pwd)
+
+# Setup .bashrc
+printf "Setting up .bashrc\n"
+echo "source $dirname/.bashrc" >> ~/.bashrc
+
+# Setup .inputrc
+printf "Setting up .inputrc\n"
+touch ~/.inputrc
+echo "source $dirname/.inputrc" >> ~/.inputrc
+
+# Install latest emacs
+printf "Installing emacs\n"
+sudo add-apt-repository ppa:ubuntu-elisp/ppa
+sudo apt-get update
+sudo apt-get install emacs-snapshot
+
+# Install ag
+printf "Installing silver searcher\n"
+sudo apt-get install ag
