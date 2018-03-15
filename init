@@ -5,7 +5,7 @@ echo "source $PWD/.bashrc" >> ~/.bashrc
 # Setup .inputrc
 printf "Setting up .inputrc\n"
 touch ~/.inputrc
-echo "source $PWD/.inputrc" >> ~/.inputrc
+echo "$include $PWD/.inputrc" >> ~/.inputrc
 
 # Install latest emacs
 printf "Installing emacs\n"
