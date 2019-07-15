@@ -1,25 +1,25 @@
 # Setup .bashrc
-printf "Setting up .bashrc\n"
+printf "\nSetting up .bashrc ========================\n"
 echo "source $PWD/.bashrc" >> ~/.bashrc
 
 # Setup .inputrc
-printf "Setting up .inputrc\n"
+printf "\nSetting up .inputrc ========================\n"
 touch ~/.inputrc
 echo '$include' "$PWD/.inputrc" >> ~/.inputrc
 
 # Install latest emacs
-printf "Installing emacs\n"
-sudo add-apt-repository ppa:ubuntu-elisp/ppa
-sudo apt-get update
-sudo apt-get install emacs-snapshot
+printf "\nInstalling emacs ========================\n"
+sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
+sudo apt-get update -y
+sudo apt-get install -y emacs-snapshot
 
 # Install ag
-printf "Installing silver searcher\n"
-sudo apt-get install ag
+printf "\nInstalling silver searcher ========================\n"
+sudo apt-get install -y silversearcher-ag
 
 # Install google-chrome-stable
-printf "Installing google-chrome-stable\n"
+printf "\nInstalling google-chrome-stable ========================\n"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt-get update
-sudo apt-get install google-chrome-stable
+sudo apt-get update -y
+sudo apt-get install -y google-chrome-stable
